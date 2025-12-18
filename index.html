@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Symbia: The intelligent ecosystem for pets, plants, and people. AI-powered, sustainable, and tailored for Benelux urban homes." />
+  <meta name="theme-color" content="#00A896" />
+  <title>Symbia — Small, Smart, Sustainable</title>
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Symbia — Your Home, in Harmony" />
+  <meta property="og:description" content="AI-powered care for pets, plants & people. Launching in Amsterdam. Join our pilot!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://symbia.app" />
+  <meta property="og:image" content="https://symbia.app/og-image.jpg" />
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%2300A896' width='192' height='192'/><text x='96' y='120' font-size='80' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'>🌿</text></svg>">
+
+  <style>
+    :root {
+      --primary: #00A896;
+      --primary-dark: #003B5C;
+      --bg: #0F1419;
+      --bg-elevated: #1A2332;
+      --text: #FFFFFF;
+      --text-secondary: #B0BEC5;
+      --border: rgba(0, 168, 150, 0.2);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, var(--bg) 0%, var(--primary-dark) 100%);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    section {
+      padding: 4rem 0;
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary); }
+    h3 { font-size: 1.25rem; margin-bottom: 1rem; }
+    p { margin-bottom: 1rem; color: var(--text-secondary); }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.75rem;
+      background: var(--primary);
+      color: var(--bg);
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 168, 150, 0.4);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+    header {
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      background: rgba(15, 20, 25, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    .hero {
+      text-align: center;
+      padding: 6rem 0;
+    }
+    .hero h1 {
+      margin-bottom: 1.5rem;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .feature-card {
+      background: rgba(0, 168, 150, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .feature-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+    }
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 1.25rem;
+      color: var(--primary);
+    }
+    .cta {
+      background: rgba(0, 168, 150, 0.1);
+      text-align: center;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 0 2rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 2.5rem 0; }
+      .hero { padding: 4rem 0; }
+    }
+  </style>
+</head>
+<body>
+<header>
+    <div class="container header-content">
+      <a href="/" class="logo">
+        <img src="symbia-logo.png" alt="Symbia Logo" width="40" height="40" style="margin-right: 10px; filter: brightness(1.5);">
+        <span style="font-size: 1.5rem; font-weight: 700; color: #00A896;">Symbia</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#solution">Solution</a>
+        <a href="#features">Features</a>
+        <a href="#pilot">Pilot</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container" style="text-align: center;">
+      <!-- تصویر بالای متن -->
+      <img src="hero-illustration.png" alt="Symbia Ecosystem: Pets, Plants & People" style="max-width: 100%; height: auto; max-height: 300px; border-radius: 16px; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+    
+      <h1>Small, Smart, Sustainable —<br>From Plant to Planet!</h1>
+      <p>Symbia is the intelligent ecosystem for pets, plants, and people — launching in urban homes across the Benelux.</p>
+      <a href="#pilot" class="btn">Join the Amsterdam Pilot</a>
+    </div>
+  </section>
+
+  <section id="problem">
+    <div class="container">
+      <h2>The Problem in Modern Urban Homes</h2>
+      <p>30–50% of houseplants die annually due to preventable errors. Meanwhile, toxic plants pose silent risks to curious pets. Current apps are fragmented, generic, and unreliable.</p>
+
+    <!-- تصویر + عنوان -->
+      <div style="margin-top: 2rem; text-align: center;">
+        <img src="toxic-plants-for-pets.png" alt="Toxic Plants for Pets" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+        <p style="margin-top: 1rem; font-size: 1rem; color: var(--text-secondary); font-weight: 600;">
+          Toxic Plants for Pets
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="solution" style="background: rgba(0, 168, 150, 0.03);">
+    <div class="container">
+      <h2>One Ecosystem. Total Harmony.</h2>
+      <p>Symbia unifies plant care, pet wellness, and household routines into a single AI-powered platform — trained on Benelux horticultural and pet health data.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🏠</div>
+          <h3>Living Ecosystem Hub</h3>
+          <p>Real-time IoT monitoring + AI insights for your multi-species home.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🐾</div>
+          <h3>Pet Wellness Intelligence</h3>
+          <p>ASPCA-grade toxicity screening + behavior analytics to keep pets safe.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌿</div>
+          <h3>Plant Health Optimization</h3>
+          <p>Microclimate-aware diagnostics + region-specific care for every plant.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3>Shared Family Routines</h3>
+          <p>Habit-driven coaching for multi-person households managing care together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="differentiation">
+    <div class="container">
+      <h2>Why Symbia Stands Out</h2>
+      <ul style="max-width: 800px; margin: 0 auto; list-style: none;">
+        <li style="margin-bottom: 1rem;">✅ <strong>AI Toxicity Engine</strong> — Prevents pet poisoning before it happens.</li>
+        <li style="margin-bottom: 1rem;">✅ <strong>Modular, Low-Cost Sensors</strong> — €30–60 vs. €400+ smart gardens.</li>
+        <li style="margin-bottom: 1rem;">✅ <strong>Benelux-Adaptive AI</strong> — Trained on local climate, plants, and pet data.</li>
+        <li style="margin-bottom: 1rem;">✅ <strong>Circular Hardware</strong> — ESPR-compliant, repairable, recyclable.</li>
+        <li>✅ <strong>Full Ecosystem</strong> — From insurance to nutrition, all in one platform.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="pilot" class="cta">
+    <div class="container">
+      <h2>Be Among the First 300 Amsterdam Pilot Households</h2>
+      <p>We’re launching in Amsterdam with 200–300 digitally-native, sustainability-conscious households who own pets and plants.</p>
+      <p><strong>Goal:</strong> Achieve >85% plant survival rate and >95% toxicity alert accuracy.</p>
+      <a href="mailto:info@symbia.app?subject=Join%20Symbia%20Pilot" class="btn">Apply Now</a>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <p>© 2025 Symbia. The sustainable operating system for Europe’s modern, multi-species home.</p>
+      <p>Contact us: <a href="mailto:info@symbia.app" style="color: var(--primary);">info@symbia.app</a></p>
+      <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/company/symbiaapp" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--text-secondary)" style="transition: fill 0.3s;">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.125-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </a>
+
+        <!-- X (Twitter) -->
+        <a href="https://x.com/SymbiaApp" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--text-secondary)" style="transition: fill 0.3s;">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L3.93 21.75H.628L7.742 12.56 0 2.25h6.964l5.02 6.694L18.244 2.25z" fill="var(--text-secondary)"/>
+          </svg>
+        </a>
+
+      <!-- YouTube -->
+        <a href="https://www.youtube.com/@SymbiaApp" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--text-secondary)" style="transition: fill 0.3s;">
+            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6 0.245 11.626 0.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+          </svg>
+        </a>
+
+      <!-- GitHub -->
+      <a href="https://github.com/SymbiaApp" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--text-secondary)" style="transition: fill 0.3s;">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.292-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.611-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+    </div>
+      <p style="margin-top: 1.5rem;">Amsterdam · Benelux · European Union</p>
+    </div>
+  </footer>
+</body>
+</html>
